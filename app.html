@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>For You ❤️</title>
+
+  <style>
+    body {
+      margin: 0;
+      font-family: sans-serif;
+      overflow: hidden;
+    }
+
+    .container {
+      display: flex;
+      width: 600%;
+      height: 100vh;
+      transition: transform 0.5s ease-in-out;
+    }
+
+    .slide {
+      width: 100%;
+      flex-shrink: 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 20px;
+    }
+
+    h1, h2 { font-size: 26px; }
+    p { font-size: 18px; max-width: 300px; }
+
+    img, video {
+      width: 80%;
+      max-width: 300px;
+      border-radius: 12px;
+      margin-top: 15px;
+    }
+
+    button {
+      margin-top: 20px;
+      padding: 12px 25px;
+      font-size: 18px;
+      border-radius: 25px;
+      border: none;
+      background: linear-gradient(45deg, #ff6b81, #ff9a9e);
+      color: white;
+      cursor: pointer;
+    }
+  </style>
+</head>
+
+<body>
+
+<div class="container" id="slides">
+
+  <!-- Slide 1 -->
+  <div class="slide" style="background:#ffe4e1;">
+    <h1>Hey human 👀</h1>
+    <p>Shall we talk… walking, talking, strawberry ice cream? 🍓</p>
+    <img src="start.jpg">
+    <button onclick="next()">Yes 😌</button>
+  </div>
+
+  <!-- Slide 2 -->
+  <div class="slide" style="background:#f8d7da;">
+    <p>You wanted this birthday to be beautiful…<br>but with me? 😏</p>
+    <img src="cat.jpg">
+    <button onclick="next()">Continue</button>
+  </div>
+
+  <!-- Slide 3 -->
+  <div class="slide" style="background:#fff0f5;">
+    <p>I was kidding… you know what?</p>
+    <video controls>
+      <source src="us.mp4" type="video/mp4">
+    </video>
+    <button onclick="next()">Yes ❤️</button>
+  </div>
+
+  <!-- Slide 4 -->
+  <div class="slide" style="background:#e6e6fa;">
+    <p>You are a beautiful tornado… ❤️</p>
+    <img src="slide4.jpg">
+    <button onclick="next()">What? 😳</button>
+  </div>
+
+  <!-- Slide 5 -->
+  <div class="slide" style="background:#e0ffff;">
+    <p>I can’t stop irritating you daily 😄 but still…</p>
+    <img src="fun.jpg">
+    <button onclick="next()">Now what? 👀</button>
+  </div>
+
+  <!-- Slide 6 -->
+  <div class="slide" style="background:black; color:white;">
+    <p>
+      When you sleep,<br>
+      you look like a beautiful crescent 🌙
+    </p>
+    <img src="final.jpg">
+    <a href="https://drive.google.com/file/d/1c1gzOJzkhxAFrrp7gO7U8E0jQUSSPOxU/view?usp=drive_link" target="_blank">
+      <button>Okay…</button>
+    </a>
+  </div>
+
+</div>
+
+<script>
+  let current = 0;
+
+  function next() {
+    if (current < 5) {
+      current++;
+      document.getElementById("slides").style.transform =
+        "translateX(-" + current * 100 + "vw)";
+    }
+  }
+</script>
+
+</body>
+</html>
